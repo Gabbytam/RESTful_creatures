@@ -1,0 +1,27 @@
+<h1>Add a New Prehistoric Creature</h1>
+
+<!-- use a form to get data about the new creature  -->
+<!-- form tags have two attibites that are very important for their CRUD functionality  -->
+    <!-- method: HTTP verb (in this case, POST) -->
+    <!-- action: the path(url pattern) associated with the route that will handle the data -->
+<form method='POST' action='/prehistoric_creatures'>
+    <!-- inputs inside form need a type, and id, and a name  -->
+        <!-- the name will serve as the key name in the JS object when data is taken and converted, make it the same as whatever it is named in the JSON data  -->
+        <!-- the id allows us to connect the input with its label  -->
+    <label for='creatureType'>Type</label>
+    <input type='text' id='creatureType' name='type'>
+
+    <label for='creatureImgUrl'>Img URL</label>
+    <input type='text' id='creatureImgUrl' name='img_url'>
+
+    <input type='submit'>
+</form>
+<!-- NOTE: submitting this form will make a POST to the url /prehistoric_creatures with the data contained in the form fields.
+To receive the data, we need to create a POST route and use some middleware to make the data readable. 
+The middleware stores the data submitted from the form in a req.body object.  -->
+
+<h4>Click the link to discover some prehistoric animal types and pictures!</h4>
+<a href='https://www.activewild.com/list-of-prehistoric-animals-that-are-not-dinosaurs/' target='_blank'>Discover!</a>
+
+<!-- NOTE ON BODY PARSER: form data is passed as payload of the request. Every field that has a name will be included in that payload and it is sent as a form encoded text.
+body-parser is used to automatically parse the form body into a JS object that we can use and it stores it in req.body -->

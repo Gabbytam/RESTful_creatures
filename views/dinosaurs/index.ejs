@@ -1,0 +1,17 @@
+<h1>List of Dinos</h1>
+<!-- because we are using a METHOD of GET, the form info gets sent into the URL -->
+<form method='GET' action='/dinosaurs'>
+    <label for='nameFilter'>Filter by Name:</label>
+    <!-- name='nameFilter' sets the key for the req.query in app.get('/dinosaurs'...) -->
+    <input type='text' id='nameFilter' name='nameFilter'>
+    <input type='submit'>
+</form>
+<ul>
+    <% dinosaurs.forEach(dino => { %>
+        <li><%= dino.name %> is a <%= dino.type %> </li>
+    <% }) %>
+</ul>
+
+<!-- NOTE: when you submit a form using the GET method, the key-value pairs are appened to the URL in a query string.
+The URL will update to contain a query string, looking something like ?__keyname__=__value__
+The query string will be available via the request ojbect using req.query -->

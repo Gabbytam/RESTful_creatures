@@ -1,0 +1,10 @@
+<h1>List of All Prehistoric Creatures:</h1>
+<ul>
+    <!-- creatures is the name of the array inside our object with the res.render for index.ejs -->
+    <% creatures.forEach(creature => { %>
+        <li>
+            The <%= creature.type %> looks like 
+            <img src='<%= creature.img_url %>' height='100px'>
+        </li>
+    <% }) %> 
+</ul>

@@ -1,0 +1,18 @@
+<h1>Add a New Dino</h1>
+
+<!-- 
+- In a form, the METHOD attribute and the ACTION attribute tells the app which route to send the form data to, once the form has been submitted
+- METHOD corresponds to the HTTP verb (get or post)
+- ACTION corresponds to URL pattern for the route that we've written to deal with the form data, (aka payload) 
+-->
+<form action='/dinosaurs' method='POST'>
+    <!-- for connects to the id of the input -->
+    <label for='dinosaurType'>Type</label>
+    <!-- name is important for the key when grabbing req.body in index.js app.post -->
+    <input type='text' name='type' id='dinosaurType'>
+
+    <label for='dinosaurName'>Name</label>
+    <input type='text' name='name' id='dinosaurName'>
+
+    <input type='submit'>
+</form>
